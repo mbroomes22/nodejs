@@ -4,7 +4,10 @@ import history from '../history'
 /**
  * ACTION TYPES
  */
-const GET_USER = 'GET_USER'
+const GET_USERS = 'GET_USERS'
+const GET_SINGLE_USER = 'GET_SINGLE_USER'
+const ADD_USER = 'ADD_USER'
+const UPDATE_USER = 'UPDATE_USER'
 const REMOVE_USER = 'REMOVE_USER'
 
 /**

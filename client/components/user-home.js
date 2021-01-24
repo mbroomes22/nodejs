@@ -5,12 +5,10 @@ import {connect} from 'react-redux'
 /**
  * COMPONENT
  */
-export const UserHome = props => {
-  const {email} = props
-
+export const UserHome = () => {
   return (
     <div>
-      <h3>Welcome, {email}</h3>
+      <h1>NodeJS Test</h1>
     </div>
   )
 }
