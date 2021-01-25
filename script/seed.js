@@ -30,6 +30,13 @@ async function seed() {
       balance: 2644.0
     }),
     User.create({
+      creditorName: 'DISCOVER',
+      firstName: 'Sasha',
+      lastName: 'Tester13',
+      minPaymentPercentage: 8.0,
+      balance: 70.0
+    }),
+    User.create({
       creditorName: 'VISA',
       firstName: 'Sally',
       lastName: 'Tester54',

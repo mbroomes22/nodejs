@@ -2,8 +2,10 @@ const router = require('express').Router()
 const {User} = require('../db/models')
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
+const newArr = require('./helper')
 module.exports = router
 
+//get all creditors
 router.get('/', async (req, res, next) => {
   try {
     const users = await User.findAll()
@@ -13,6 +15,18 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+//get all creditor's data with total balance and avg minpp
+router.get('/creditors/creditorData', async (req, res, next) => {
+  try {
+    const data = await User.findAll()
+    const route = newArr(data)
+    res.json(route)
+  } catch (error) {
+    next(error)
+  }
+})
+
+//get creditors by id
 router.get('/:userId', async (req, res, next) => {
   try {
     const singleUser = await User.findOne({
@@ -24,6 +38,7 @@ router.get('/:userId', async (req, res, next) => {
   }
 })
 
+//get creditors by creditor name
 router.get('/creditorNames/:creditorName', async (req, res, next) => {
   try {
     const creditorUsers = await User.findAll({
@@ -40,6 +55,7 @@ router.get('/creditorNames/:creditorName', async (req, res, next) => {
   }
 })
 
+//implement credit analysis, finding creditors with balances greater than 2000 and minPP of less than or equal to 29.99
 router.get('/creditAnalysis/filter', async (req, res, next) => {
   try {
     const creditAnalysis = await User.findAll({
@@ -54,6 +70,7 @@ router.get('/creditAnalysis/filter', async (req, res, next) => {
   }
 })
 
+//add a new creditor
 router.post('/', async (req, res, next) => {
   try {
     await User.create(req.body)
@@ -64,6 +81,7 @@ router.post('/', async (req, res, next) => {
   }
 })
 
+//update creditor info based on their id
 router.put('/:userId', async (req, res, next) => {
   try {
     const updatedUsers = await User.findOne({
@@ -78,6 +96,7 @@ router.put('/:userId', async (req, res, next) => {
   }
 })
 
+//delete a creditor based on their id
 router.delete('/:userId', async (req, res, next) => {
   try {
     await User.destroy({
