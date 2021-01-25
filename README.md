@@ -22,4 +22,4 @@
 * Express Rest APIs - /nodejs/server/api/users.js
 * Sequelize db models - /nodejs/server/db/models/user.js
 
-## Video Walkthrough: [youtube](https://www.youtube.com/watch?v=IDG6wrHdrMM)
+## Video Walkthrough: [youtube](https://www.youtube.com/watch?v=Dpio_xq61EU)
