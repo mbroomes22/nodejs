@@ -19,6 +19,7 @@ const newArr = array => {
     if (!(credLoc === false)) {
       finalArr[credLoc]['total balance'] += obj.balance
       finalArr[credLoc]['existing minpps'].push(obj.minPaymentPercentage)
+      finalArr[credLoc].avg = finalArr[credLoc]['minpp calc']().toFixed(2)
     } else {
       let info = new Object()
       info.creditorName = obj.creditorName
@@ -33,7 +34,7 @@ const newArr = array => {
           }, 0) / this['existing minpps'].length
         )
       }
-      info['avg minpp'] = info['minpp calc']()
+      info['avg minpp'] = info['existing minpps'][0]
 
       finalArr.push(info)
     }
