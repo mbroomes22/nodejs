@@ -4,6 +4,7 @@
 
 * in the terminal run `npm run start-dev`, project should start on localhost:8080
 * go to path /api/users to get started with get requests
+* to run the seed file use `npm run seed`
 
 ## Features
 
@@ -21,4 +22,4 @@
 * Express Rest APIs - /nodejs/server/api/users.js
 * Sequelize db models - /nodejs/server/db/models/user.js
 
-## Video Walkthrough
+## Video Walkthrough: [youtube](https://www.youtube.com/watch?v=IDG6wrHdrMM)
